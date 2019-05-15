@@ -37,8 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
-
-
+gem 'activeadmin'
 # Authentication Devise
 gem 'devise', '~> 4.6', '>= 4.6.2'
 
