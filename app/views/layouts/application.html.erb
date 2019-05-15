@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Musika</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%=  stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,900i' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% unless action_name == "new" %>
+    <%= render 'layouts/navigation' %>
+    <% end %>
+    <%= yield %>
+     <% unless action_name == "new" %>
+    <%= render 'layouts/footer' %>
+     <% end %>
+  </body>
+</html>
