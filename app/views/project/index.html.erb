@@ -1,0 +1,13 @@
+
+	<div class="row">
+		<% @projects.each do |project| %>
+			<%= link_to project do %>
+						<div class="card col sm-12 md-6 lg-4">					
+							<%= image_tag project.image(:thumb), class: "card-img-top" %>
+							<div class="card-body">
+								<%= project.name %>
+							</div>
+						</div>
+			<% end %>	
+		<% end %>		
+	</div>
