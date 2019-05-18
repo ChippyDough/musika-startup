@@ -40,6 +40,13 @@ a:hover {
 	font-size: 5em;
 }
 
+.display-3 {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	font-style: italic;
+	text-transform: uppercase;
+	font-size: 4em;
+}
+
 .btn-lg {
 	padding: 25px;
 	text-transform: uppercase;
@@ -70,6 +77,11 @@ footer {
     width: 100%;
     line-height: 60px;
     background: transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
 }
 
 #footer-logo {
@@ -101,4 +113,13 @@ footer {
 .edit-account-wrapper {
 	padding: 100px;
 }
+
+/* COURSES */
+
+.card {
+	float:left;
+	border: none;
+	background: transparent;
+}
+
 
