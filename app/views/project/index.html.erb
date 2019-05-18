@@ -17,7 +17,7 @@
 	<% @projects.each do |project| %>
 		<%= link_to project do %>
 			<div class="card text-white col-md-6 col-sm-12 mt-5">
-			  <%= image_tag project.image(:thumb), class: "card-img" %>
+			  <%= image_tag project.image(:medium), class: "card-img" %>
 			</div>
 		<% end %>
 	<% end %>
