@@ -1,4 +1,47 @@
-<h1> <%= @task.title %> </h1>
 
-<p> <%= @task.note %> </p>
-<p> <%= @task.video %> </p>
+
+
+
+<div class="app-wrapper">
+		<div class="row app-header">
+			<div class="col-md-12">
+				
+			</div>
+		</div>
+		<div class="row app-curriculum">
+			<div class="container">
+				<div class="col-md-4 app-sidebar">
+					<ul class="list-group app-content">
+					  <% @tasks.each do |task| %>
+					  	<% if task.header %>
+					 		 <li class="list-group-item active"><%= task.title %></li>
+			
+					 	<% else %>
+					 	 	 <%= link_to [task.project, task], class: "list-group-item app-list-item" do %>
+					 	 	 	<%= task.title %>
+					    	<% end %>
+					    <% end %>
+					  <% end %>
+					</ul>
+				</div>
+				<div class="col-md-8 app-video app-content">
+					<div id="wistia_<%= @task.video %>"></div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+<script>
+	wistiaEmbed = Wistia.embed("<%= @task.video %>", {
+		videoQuality: "hd-only",
+		videoFoam: true
+	});
+
+	function setPlaySpeed(speed) {
+		wistiaEmbed.playbackRate(speed);
+	}
+</script>
+
+
+

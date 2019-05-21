@@ -24,6 +24,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_admin-sortable_tree (2.0.0)
+      activeadmin (>= 1.1)
+      coffee-rails
+      jquery-rails
+      sass (~> 3.1)
     active_admin_theme (1.0.3)
     activeadmin (2.0.0)
       arbre (~> 1.2, >= 1.2.1)
@@ -288,6 +293,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin-sortable_tree (~> 2.0)
   active_admin_theme
   activeadmin
   bootsnap (>= 1.1.0)
@@ -318,4 +324,4 @@ RUBY VERSION
    ruby 2.6.0p0
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

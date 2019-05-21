@@ -41,12 +41,15 @@ gem 'activeadmin'
 gem 'active_admin_theme'
 gem 'paperclip', '~> 6.1'
 
+gem 'active_admin-sortable_tree', '~> 2.0'
+
 # Authentication Devise
 gem 'devise', '~> 4.6', '>= 4.6.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
 end
 
 group :production do 
