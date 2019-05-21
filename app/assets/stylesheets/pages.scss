@@ -23,6 +23,10 @@ a:hover {
 	border: none;
 	color: #191919;
 }
+
+.list-group-item a:hover {
+	color: none!important;	
+}
 .dropdown-item:focus {
 	background-color: #1CBAA4;
 }
