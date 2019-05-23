@@ -1,16 +1,10 @@
-
-
-
-
 <div class="app-wrapper">
-		<div class="row app-header">
-			<div class="col-md-12">
-				
+	<div class="container">
+		<div class="row app-main-full">
+			<div class="app-video col-md-8 bg-white">
+				<div id="wistia_<%= @task.video %>"></div>
 			</div>
-		</div>
-		<div class="row app-curriculum">
-			<div class="container">
-				<div class="col-md-4 app-sidebar">
+			<div class="col-md-4 bg-dark">
 					<ul class="list-group app-content">
 					  <% @tasks.each do |task| %>
 					  	<% if task.header %>
@@ -23,13 +17,44 @@
 					    <% end %>
 					  <% end %>
 					</ul>
-				</div>
-				<div class="col-md-8 app-video app-content">
-					<div id="wistia_<%= @task.video %>"></div>
-				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="container">
+		<div class="row app-body">
+			<div class="video-btn-group">
+			<% if !@prev_task.nil? %>
+						<%= link_to "back", [@prev_task.project, @prev_task], class: "btn video-btn btn-lg" %>
+					<% else %>
+						&nbsp;
+					<% end %>
+			<% if !@next_task.nil? %>
+						<%= link_to "Complete and Next", [@next_task.project, @next_task], class: "btn video-btn btn-lg" %>
+			<% end %>
 			</div>
 		</div>
+	</div>
+	<div class="row app-tabs">
+
+	</div>
 </div>
+
+
+<!-- CONTROLS
+
+		
+				<% if !@prev_task.nil? %>
+					<%= link_to "Prev", [@prev_task.project, @prev_task], class: "btn video-btn" %>
+				<% else %>
+					&nbsp;
+				<% end %>
+				<% if !@next_task.nil? %>
+					<%= link_to "Next", [@next_task.project, @next_task], class: "btn video-btn" %>
+				<% end %>
+			
+-->
+
+<!-- WISTIA SCRIPT -->
 
 <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 <script>
@@ -43,5 +68,7 @@
 	}
 </script>
 
+
+						
 
 
