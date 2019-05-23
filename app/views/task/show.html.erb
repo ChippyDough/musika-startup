@@ -9,7 +9,6 @@
 					  <% @tasks.each do |task| %>
 					  	<% if task.header %>
 					 		 <li class="list-group-item active"><%= task.title %></li>
-			
 					 	<% else %>
 					 	 	 <%= link_to [task.project, task], class: "list-group-item app-list-item" do %>
 					 	 	 	<%= task.title %>
@@ -24,7 +23,7 @@
 		<div class="row app-body">
 			<div class="video-btn-group">
 			<% if !@prev_task.nil? %>
-						<%= link_to "back", [@prev_task.project, @prev_task], class: "btn video-btn btn-lg" %>
+						<%= link_to "Previous", [@prev_task.project, @prev_task], class: "btn video-btn btn-lg" %>
 					<% else %>
 						&nbsp;
 					<% end %>
