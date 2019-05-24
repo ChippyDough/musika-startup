@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'pages#home'
+  post '/free' => 'charge#free'
 
   resources :project do
   	resources :task, only: [:show]

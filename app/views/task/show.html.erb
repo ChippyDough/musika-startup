@@ -1,60 +1,77 @@
+<br>
 <div class="app-wrapper">
 	<div class="container">
-		<div class="row app-main-full">
-			<div class="app-video col-md-12 bg-white">
+		<div class="row h-100">
+		<div class="app-header col-md-10 my-auto">
+			<span class="app-header-title text-white"><%= @task.title %></span>
+			<span class="content-btn float-right text-white btn btn-primary btn-md" data-toggle="modal" data-target="#exampleModal4">Course Contents</span>
+		</div>
+	</div>
+		<br>
+		<div class="row">
+			<div class="app-video col-md-10">
 				<div id="wistia_<%= @task.video %>"></div>
 			</div>
-			<!--
-			<div class="col-md-4 bg-dark">
-					<ul class="list-group app-content">
-					  <% @tasks.each do |task| %>
-					  	<% if task.header %>
-					 		 <li class="list-group-item active"><%= task.title %></li>
-					 	<% else %>
-					 	 	 <%= link_to [task.project, task], class: "list-group-item app-list-item" do %>
-					 	 	 	<%= task.title %>
-					    	<% end %>
-					    <% end %>
-					  <% end %>
-					</ul>
-			</div>	
-		-->
 		</div>
+		<br>
 	</div>
 	<div class="container">
 		<div class="row app-body">
 			<div class="video-btn-group">
 			<% if !@prev_task.nil? %>
-						<%= link_to "Previous", [@prev_task.project, @prev_task], class: "btn video-btn btn-lg" %>
+						<span class="video-btn"><%= link_to "Previous", [@prev_task.project, @prev_task], class: "btn btn-lg" %></span>
 					<% else %>
 						&nbsp;
 					<% end %>
 			<% if !@next_task.nil? %>
-						<%= link_to "Complete and Next", [@next_task.project, @next_task], class: "btn video-btn btn-lg" %>
+
+						<span class="video-btn"><%= link_to "Complete and Next", [@next_task.project, @next_task], class: "btn video-btn btn-lg" %></span>
 			<% end %>
 			</div>
 		</div>
 	</div>
-	<hr>
 	<div class="row app-tabs">
 
 	</div>
 </div>
 
 
-<!-- CONTROLS
+<!-- MODAL HTML-->
 
-		
-				<% if !@prev_task.nil? %>
-					<%= link_to "Prev", [@prev_task.project, @prev_task], class: "btn video-btn" %>
-				<% else %>
-					&nbsp;
-				<% end %>
-				<% if !@next_task.nil? %>
-					<%= link_to "Next", [@next_task.project, @next_task], class: "btn video-btn" %>
-				<% end %>
-			
--->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-slideout modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title display-5"  id="exampleModalLabel">Course Contents</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	<ul class="list-group app-content">
+			<% @tasks.each do |task| %>
+			<% if task.header %>
+				 <li class="list-group-item active"><%= task.title %></li>
+			<% else %>
+				 <%= link_to [task.project, task], class: "list-group-item app-list-item" do %>
+					<%= task.title %>
+			<% end %>
+			<% end %>
+			<% end %>
+	    </ul>
+	    <div class="modal-footer text-center">
+       	 <button type="button" class="btn btn-primary">Course Downloads</button>
+    	</div>
+	    <hr>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL HTML END -->
+
+
+
 
 <!-- WISTIA SCRIPT -->
 
