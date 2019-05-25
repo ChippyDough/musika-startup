@@ -1,0 +1,20 @@
+<br>
+<div class="container">
+	<h1 class="text-white first_name display-5">Hi, <%= current_user.name %>!</h1>
+
+	<% if @projects.count > 0 %>
+
+		<% @projects.each do |project| %>
+			<%= link_to project do %>
+				<div class="card text-white col-md-6 col-sm-12 mt-5">
+				  <%= image_tag project.image(:medium), class: "card-img" %>
+				</div>
+			<% end %>
+		<% end %>
+
+	<% else %>
+		<h1 class="text-white"> Looks like you are not enrolled to any course yet!</h1>
+		<%= link_to "See Courses", project_index_path, class: "btn btn-primary btn-lg" %>
+	<% end %>	
+
+</div>
