@@ -43,6 +43,8 @@ gem 'paperclip', '~> 6.1'
 
 gem 'active_admin-sortable_tree', '~> 2.0'
 
+gem 'stripe', '~> 4.18'
+
 # Authentication Devise
 gem 'devise', '~> 4.6', '>= 4.6.2'
 
@@ -52,9 +54,9 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do 
-  gem 'pg'
-end
+#group :production do 
+ # gem 'pg'
+#end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

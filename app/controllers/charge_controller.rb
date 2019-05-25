@@ -8,4 +8,6 @@ class ChargeController < ApplicationController
 
 		redirect_to project
 	end 
+ 
 end
+
