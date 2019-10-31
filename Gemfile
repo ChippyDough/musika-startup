@@ -46,7 +46,7 @@ gem 'active_admin-sortable_tree', '~> 2.0'
 gem 'stripe', '~> 4.18'
 
 # Authentication Devise
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
